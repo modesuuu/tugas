@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var p={
+            jenis:'rubah',
+            nama:'mochi',
+            warna:'orange,putih',
+            jumlah_kaki:4,
+            mata:{
+                warna_mata:'kuning',
+                warna_pupil:'hitam'
+            },
+            saat_berburu: function (){
+                return "sangat cerdik saat berburu/mencari makanan"
+            },
+            bertahan_hidup: function (){
+                return "bisa bertahan/beradaptasi saat musim dingin"
+            }
+        }
+
+        document.write(`Jenis: ${p.jenis}`+"<br/>");
+        document.write(`Nama: ${p.nama}`+"<br/>");
+        document.write(`Warna: ${p.warna}`+"<br/>");
+        document.write(`Jumlah kaki: ${p.jumlah_kaki}`+"<br/>");
+        document.write(`Warna mata: ${p.mata.warna_mata}`+"<br/>");
+        document.write(`Warna pupil: ${p.mata.warna_pupil}`+"<br/>");
+        document.write(`Saat berburu: ${p.saat_berburu()}`+"<br/>");
+        document.write(`bertahan hidup: ${p.bertahan_hidup()}`+"<br/>");
+    </script>
+</body>
+</html>
