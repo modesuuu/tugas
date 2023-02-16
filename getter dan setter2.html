@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="yellow">
+    <h1>MATERI CLASS</h1>
+        <!------- GETTER DAN SETTER ------->
+    <script>
+        class siswa{
+            #nama = "mochi modesu";
+            #kkm = 75
+
+            //
+            set nama(nama){
+                this.#nama = nama
+            }
+
+            //menampilkan
+            get nama(){
+                return this.#nama
+            }
+
+            set kkm (kkm){
+                if (kkm < 10){
+                    document.write("tdk blh krng dari 10 ")
+                    return;
+                }
+                this.#kkm = kkm
+            }
+
+            get kkm(){
+                return this.#kkm
+            }
+        }
+        var siswa1 = new siswa()
+        siswa1.nama = "mochi"
+        siswa1.kkm = 7
+        document.write(siswa1.nama+"<br/>")
+        document.write(siswa1.kkm)
+    </script>
+</body>
+</html>

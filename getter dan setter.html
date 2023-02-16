@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="yellow">
+    <h1>MATERI CLASS</h1>
+    <script>
+            /*class siswa{
+                constructor(nama,kelas,jurusan,tahun_lahir,alamat,mtk,dlg,){
+                    this.nama=nama
+                    this.kelas=kelas
+                    this.jurusan=jurusan
+                    this.tahun_lahir=tahun_lahir
+                    this.mtk=mtk
+                    this.dlg=dlg
+                }
+                #kkm=75
+                rata_nilai(){
+                    var nilai=(this.mtk+this.dlg)/2
+                    if(nilai>this.#kkm){
+                        return "lulus"
+                    }else{
+                        return "tidak lulus"
+                    }
+                }
+                /*umur (){
+                    var umur=this.tahun_lahir
+                    var tahun=2023
+                    return (tahun-umur)
+                }
+            }*/
+
+            var nama1=new siswa("mochi",10,"pplg",2007,"kotbar",44,88)
+            document.write(`nama: ${nama1.nama}`+"<br/>")
+            document.write(`kelas: ${nama1.kelas}`+"<br/>")
+            document.write(`jurusan: ${nama1.jurusan}`+"<br/>")
+            document.write(`tahun lahir: ${nama1.tahun_lahir}`+"<br/>")
+            document.write(`ketentuan: ${nama1.rata_nilai()}`+"<br/>")
+            document.write(`umur mochi ${nama1.umur()}`+" tahun")
+            
+    </script>
+        <!------- GETTER DAN SETTER ------->
+    <script>
+        class siswa{
+            #nama = "mochi modesu"
+
+            //melihat (tidak bisa di ganti)
+            set nama(nama){
+                this.#nama = nama;
+            }
+
+            //tidak bisa melihat
+            get nama(){
+                return this.#nama
+            }
+        }
+        var siswa1 = new siswa()
+        siswa1.nama = "mochi"
+        document.write(siswa1.nama)
+    </script>
+</body>
+</html>
