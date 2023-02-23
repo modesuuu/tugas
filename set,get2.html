@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        
+        Id
+                <br>
+                <input type="text" id="id" placeholder="masukan nama">
+                <br>
+            
+        Title
+                <br>
+                <input type=Titlepassword" id="title" placeholder="masukan Title">
+                <br>
+            
+        Price
+                <br>
+                <input type="number" id="price" placeholder="masukan price">
+                <br>
+            
+                <button type="submit" name="submit" onclick="masuk()">Masuk</button>
+            </label>
+            <br>
+        </form>
+
+
+
+    <script>
+        masuk (){
+        class book{
+            #id
+            #title
+            #price
+            #author
+            #date
+
+            set id (id){
+                this.#id=id
+            }
+
+            set title (title){
+                if (title < 6){
+                    alert("tidak bisa kurang dari 5 huruf")
+                }
+                return
+                this.#title=title
+            }
+
+            set price (price){
+                if ( typeof price !== 'number' ){
+                    alert("title tidak terbaca")
+                    return
+                }
+                this.#price=price
+            }
+
+            set author (author){
+                this.#author=author
+            }
+
+            set date (date){
+                this.date=date
+            }
+
+            get id(){
+                return this.#id
+            }
+
+            get title(){
+                return this.#title
+            }
+
+            get price (){
+                return this.#price
+            }
+
+            get author(){
+                return this.#author
+            }
+
+            get date(){
+                return this.#date
+            }
+            }
+
+            var book1=new book()
+            book1.id=document.getElementById("id").value
+            book1.title=document.getElementById("title").value
+            book1.price=document.getElementById("price").value
+        }
+    </script>
+</body>
+</html>
