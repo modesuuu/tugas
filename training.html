@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        class book{
+            #id
+            #title
+            #price=0
+            #author
+            #date
+
+            set id (id){
+                this.#id=id
+            }
+
+            set title (title){
+                if (title.length < 6){
+                    alert("tidak bisa kurang dari 5 huruf")
+                }
+                this.#title=title
+                return
+                
+            }
+
+            set price (price){
+                if ( price < 0 || typeof price !== 'number' ){
+                    alert("title tidak terbaca")
+                    return
+                }
+                this.#price=price
+            }
+
+            set author (author){
+                this.#author=author
+            }
+
+            set date (date){
+                this.#date=date
+            }
+
+            get id(){
+                return this.#id
+            }
+
+            get title(){
+                return this.#title
+            }
+
+            get price (){
+                return this.#price
+            }
+
+            get author(){
+                return this.#author
+            }
+
+            get date(){
+                return this.#date
+            }
+            }
+
+            var book1=new book()
+            book1.id= 12345
+            book1.title= "aku sukses"
+            book1.price= 20000
+            book1.author= "mas bro"
+            book1.date= 26
+
+            document.write(`Id: ${book1.id}`+"<br/>")
+            document.write(`Title: ${book1.title}`+"<br/>")
+             document.write(`Price: Rp.${book1.price}`+"<br/>")
+             document.write(`Author: ${book1.author}`+"<br/>")
+             document.write(`Date: ${book1.date}`+"<br/>")
+    </script>
+</body>
+</html>
