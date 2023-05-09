@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="parent">
+        <input type="text" value="ini text"> <br>
+        <input type="password" value="ini password">
+    </form>
+
+    <script type="text/javascript">
+        var parent = document.getElementById("parent")
+
+        let child1 = parent.children[0]
+        let child2 = parent.children[1]
+
+        console.log() (child1.value)
+        console.log() (child2.value)
+    </script>
+</body>
+</html>
