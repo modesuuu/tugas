@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #000000;
+  border-color: #000000 transparent #000000 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+.card-loading{
+    display: block !important;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+</style>
+<body>
+        <div class="container">
+            
+            <div class="row">
+            </div>
+            <div class="lds-dual-ring " id="p"></div>
+        </div>
+
+    <script>
+//         $(window).load(function() {
+//     $('.lds-dual-ring').hide();
+//   });
+
+try{
+            async function dataSurat(){
+                let div = document.querySelector('.row');
+                let loading = document.querySelector('.lds-dual-ring');
+
+                loading.classList.add('card-loading');
+
+                const ambilData = await fetch("https://quran-api-id.vercel.app/surahs");
+                const view = await ambilData.json();
+                
+                loading.classList.remove('card-loading');
+                
+                console.log(view);
+
+                view.forEach(element => {
+                    div.innerHTML += `
+                    <div class="col d-flex justify-content-center">
+                        
+                        <div class="card mt-4" style="width: 18rem;">  
+                            
+                            <div class="lds-dual-ring position-fixed align-self-center"></div>
+                                <div class="card-body" >
+                                <h5 class="card-title">${element.name}</h5>
+                                <p class="card-text">jumlah ayat: ${element.numberOfAyahs}</p>
+                                <p class="card-text mt-2">artinya: ${element.translation}</p>
+                                <a href="#" class="btn btn-primary">Reading</a>
+                            </div>
+                    </div>
+                </div>`
+
+                });
+            };
+
+            dataSurat();
+            
+        }catch(error){
+            console.log("orrr");
+        }
+        
+    </script>
+</body>
+</html>
